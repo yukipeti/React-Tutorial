@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: image-shake infinite 25ms linear;
+  }
+}
+
+.App-header {
+  background-color: #50867a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.link {
+  color: #61dafb;
+  text-decoration-line: #61dafb;  
+}
+
+@keyframes image-shake {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes image-spin{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rainbow {
+  0% { color: red; }
+  16% { color: orange; }
+  33% { color: yellow; }
+  50% { color: green; }
+  66% { color: blue; }
+  83% { color: indigo; }
+  100% { color: violet; }
+}
+
+.rainbow-text {
+  animation: rainbow 1s infinite;
+  animation-play-state: running; /* 常にアニメーションを動作させる */
+}
+
+@keyframes rainbow-border {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.rainbow-image {
+  animation: rainbow-border 1s infinite linear, 
+             image-spin 1s infinite linear;
+  animation-play-state: running; /* 常にアニメーションを動作させる */
+}
